@@ -1,0 +1,17 @@
+{
+    "actorSpecification": 1,
+    "name": "brand-deal-finder",
+    "title": "Brand Deal Finder - Sponsorship Discovery for Creators",
+    "description": "Automatically discover 30-50+ brand sponsorship opportunities for content creators. Uses intelligent crawling to find actual partnership pages (no hardcoded URLs).",
+    "version": "1.2",
+    "meta": {
+        "templateId": "ai-generated-actor",
+        "generatedBy": "gemini-2.0-flash-thinking-exp-01-21"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}

@@ -1,0 +1,96 @@
+{
+    "title": "Input schema for Startup Sponsorship Finder",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "creatorNiche": {
+            "title": "Creator Niche",
+            "type": "string",
+            "description": "Your content niche - Actor will automatically find brands in this category",
+            "editor": "select",
+            "enum": [
+                "gaming",
+                "tech",
+                "beauty",
+                "fitness",
+                "lifestyle",
+                "business",
+                "education",
+                "music",
+                "food",
+                "travel",
+                "pets"
+            ],
+            "default": "gaming",
+            "prefill": "gaming"
+        },
+        "location": {
+            "title": "Target Location",
+            "type": "string",
+            "description": "Geographic region to find brands from (brands often prefer local creators)",
+            "editor": "select",
+            "enum": [
+                "Global",
+                "USA",
+                "UK",
+                "Canada",
+                "Australia",
+                "India",
+                "EU"
+            ],
+            "default": "Global",
+            "prefill": "Global"
+        },
+        "customKeywords": {
+            "title": "Custom Keywords (Optional)",
+            "type": "string",
+            "description": "Refine your search with specific keywords (e.g., 'cozy gaming', 'vegan beauty', 'dog toys'). Leave empty to use broad niche search.",
+            "editor": "textfield",
+            "example": "cozy, indie, retro"
+        },
+        "followerCount": {
+            "title": "Follower Count",
+            "type": "integer",
+            "description": "Your approximate follower count across all platforms",
+            "minimum": 1000,
+            "default": 50000,
+            "prefill": 50000
+        },
+        "platforms": {
+            "title": "Platforms",
+            "type": "array",
+            "description": "Platforms where you create content",
+            "editor": "stringList",
+            "items": {
+                "type": "string"
+            },
+            "default": [
+                "Twitch",
+                "YouTube"
+            ],
+            "prefill": [
+                "Twitch",
+                "YouTube"
+            ]
+        },
+        "enableGoogleDiscovery": {
+            "title": "Enable Google Discovery",
+            "type": "boolean",
+            "description": "Search Google to discover NEW and emerging brands (slower but finds more opportunities). Disable for faster results with curated brands only.",
+            "default": true,
+            "prefill": true
+        },
+        "maxBrandsToDiscover": {
+            "title": "Max Brands to Discover",
+            "type": "integer",
+            "description": "Maximum number of brand websites to scrape (higher = more results but slower)",
+            "minimum": 10,
+            "maximum": 100,
+            "default": 50
+        }
+    },
+    "required": [
+        "creatorNiche",
+        "followerCount"
+    ]
+}

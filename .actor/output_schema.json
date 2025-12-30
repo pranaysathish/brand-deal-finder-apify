@@ -1,0 +1,18 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema for Startup Sponsorship Finder",
+    "properties": {
+        "brandOpportunities": {
+            "type": "string",
+            "title": "Brand Opportunities Report",
+            "description": "Complete list of brand sponsorship opportunities",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "summary": {
+            "type": "string",
+            "title": "Summary Statistics",
+            "description": "Overall statistics about discovered opportunities",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=summary"
+        }
+    }
+}

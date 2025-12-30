@@ -1,0 +1,125 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "brandName": {
+                "type": "string",
+                "description": "Name of the brand"
+            },
+            "brandUrl": {
+                "type": "string",
+                "description": "Brand website URL"
+            },
+            "partnershipPageUrl": {
+                "type": "string",
+                "description": "URL of the brand's partnership/sponsorship page"
+            },
+            "targetNiches": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "Content niches this brand sponsors"
+            },
+            "sponsorshipType": {
+                "type": "string",
+                "description": "Type of sponsorship (e.g., product, monetary, affiliate)"
+            },
+            "estimatedRate": {
+                "type": "string",
+                "description": "Estimated payment range or type"
+            },
+            "contactInfo": {
+                "type": "string",
+                "description": "How to apply or contact for sponsorship"
+            },
+            "requirements": {
+                "type": "string",
+                "description": "Minimum requirements (followers, platforms, etc.)"
+            },
+            "scrapedAt": {
+                "type": "string",
+                "description": "Timestamp when data was collected"
+            }
+        },
+        "required": [
+            "brandName",
+            "brandUrl"
+        ]
+    },
+    "views": {
+        "overview": {
+            "title": "Brand Opportunities",
+            "description": "All discovered brand sponsorship opportunities",
+            "transformation": {
+                "fields": [
+                    "brandName",
+                    "targetNiches",
+                    "sponsorshipType",
+                    "estimatedRate",
+                    "partnershipPageUrl",
+                    "contactInfo"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "brandName": {
+                        "label": "Brand",
+                        "format": "text"
+                    },
+                    "targetNiches": {
+                        "label": "Niches",
+                        "format": "array"
+                    },
+                    "sponsorshipType": {
+                        "label": "Type",
+                        "format": "text"
+                    },
+                    "estimatedRate": {
+                        "label": "Estimated Rate",
+                        "format": "text"
+                    },
+                    "partnershipPageUrl": {
+                        "label": "Apply Here",
+                        "format": "link"
+                    },
+                    "contactInfo": {
+                        "label": "Contact",
+                        "format": "text"
+                    }
+                }
+            }
+        },
+        "summary": {
+            "title": "Summary Statistics",
+            "description": "Overview of opportunities found",
+            "transformation": {
+                "fields": [
+                    "brandName",
+                    "targetNiches",
+                    "sponsorshipType"
+                ],
+                "limit": 10
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "brandName": {
+                        "label": "Brand",
+                        "format": "text"
+                    },
+                    "targetNiches": {
+                        "label": "Niches",
+                        "format": "array"
+                    },
+                    "sponsorshipType": {
+                        "label": "Type",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}
